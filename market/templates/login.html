@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+         <div class="text-center">
+                <img class="mb-4" src="https://res.cloudinary.com/jimshapedcoding/image/upload/v1597332609/android-icon-192x192_ove2a7.png" alt="jimshapecodeing-img">
+            </div>
+            <h1 class="h3 mb-3 font-weight-normal">
+                Login
+            </h1>
+        <form action="{{ url_for('login') }}" method="post" class="form-group" style="color:white;">
+        {{ form.hidden_tag() }}
+
+        {{ form.username.label }}
+        {{ form.username(class="form-control", placeholder="Enter your username here.") }}
+
+        {{ form.password.label }}
+        {{ form.password(class="form-control", placeholder="Enter your password here.") }}
+        <br>
+        <div class="d-flex">
+            <div class="p-2">
+                {{ form.submit(class="btn-primary") }}
+            </div>
+            <div class="ml-auto p-2">
+                <a href="{{ url_for('register') }}">Do not have an account? Register here</a>
+            </div>
+        </div>
+
+    </form>
+
+    </div>
+{% endblock %}

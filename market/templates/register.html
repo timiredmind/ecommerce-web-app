@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %} Register {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <form method="POST" action="{{ url_for('register') }}" class="form-group" style="color: white;">
+            <div class="text-center">
+                <img class="mb-4" src="https://res.cloudinary.com/jimshapedcoding/image/upload/v1597332609/android-icon-192x192_ove2a7.png" alt="jimshapecodeing-img">
+            </div>
+            <h1 class="h3 mb-3 font-weight-normal">
+                Create your Account
+            </h1>
+            {{ form.hidden_tag() }}
+
+            {{ form.username.label }}
+            {{ form.username(class="form-control", placeholder="Enter your username here.") }}
+
+
+            {{ form.email_address.label }}
+            {{ form.email_address(class="form-control", placeholder="Enter your email here.") }}
+
+
+
+            {{ form.password.label }}
+            {{ form.password(class="form-control", placeholder="Enter your password here.") }}
+
+
+            {{ form.confirm_password.label }}
+            {{ form.confirm_password(class="form-control", placeholder="Re-enter your password to confirm password") }}
+
+
+            <br>
+
+            <div class="d-flex">
+            <div class="p-2">
+                {{ form.submit(class="btn-primary") }}
+            </div>
+            <div class="ml-auto p-2">
+                <a href="{{ url_for('login') }}">Do you have an account? Login here</a>
+            </div>
+        </div>
+        </form>
+    </div>
+
+{% endblock %}
